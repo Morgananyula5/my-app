@@ -1,0 +1,171 @@
+<div class="customer-dashboard">
+  <div class="header">
+    <h1>Welcome, {{ customerName }}!</h1>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <div class="main-content">
+    <div class="request-ride">
+      <h2>Request a Ride</h2>
+      <div class="ride-details">
+        <div id="destination">
+        <label>Destination:</label>
+      </div>
+        <input type="text" [(ngModel)]="destination" (keydown.enter)="searchDestination()">
+        <button (click)="searchDestination()">Search</button>
+      </div>
+      <div></div>
+      <button (click)="requestRide()">Request Truck</button>
+    </div>
+
+    <div class="current-ride" *ngIf="currentRide">
+      <h2>Current Ride</h2>
+      <div class="ride-details">
+        <p>Driver: {{ currentRide?.driver }}</p>
+        <p>Truck: {{ currentRide?.truck }}</p>
+        <p>License Plate: {{ currentRide?.licensePlate }}</p>
+        <p>Phone Number: 0789784657</p>
+      </div>
+      <button (click)="cancelRide()">Cancel Ride</button>
+    </div>
+
+    <div *ngIf="rideAccepted">
+      <p>Driver: {{ currentRide?.driver }}</p>
+    </div>
+    <div class="rating" *ngIf="currentRide">
+      <h2>Rate Your Driver</h2>
+      <div class="rating-details">
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" [(ngModel)]="rating" min="1" max="5">
+        <button (click)="submitRating()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <div #mapContainer id="map" style="height: 250px;"></div>
+</div>
+
+<!--<div class="customer-dashboard">
+  <div class="header">
+    <h1>Welcome, {{ customerName }}!</h1>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <div class="main-content">
+    <div class="request-ride">
+      <h2>Request a Ride</h2>
+      <div class="ride-details">
+        <label>Destination:</label>
+        <input type="text" [(ngModel)]="destination" (keydown.enter)="searchDestination()">
+        <button (click)="searchDestination()">Search</button>
+      </div>
+      <button (click)="requestRide()">Request Truck</button>
+    </div>
+
+    <div class="current-ride" *ngIf="currentRide">
+      <h2>Current Ride</h2>
+      <div class="ride-details">
+        <p>Driver: {{ currentRide?.driver }}</p>
+        <p>Car: {{ currentRide?.carModel }}</p>
+        <p>License Plate: {{ currentRide?.licensePlate }}</p>
+      </div>
+      <button (click)="cancelRide()">Cancel Ride</button>
+    </div>
+
+    <div *ngIf="rideAccepted">
+      <p>Driver: {{ currentRide?.driver }}</p>
+    </div>
+
+    <div *ngIf="rideRejected">
+      <p>Driver: No drivers available</p>
+    </div>
+
+    <div class="rating" *ngIf="currentRide && currentRide.completed">
+      <h2>Rate Your Driver</h2>
+      <div class="rating-details">
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" [(ngModel)]="rating" min="1" max="5">
+        <button (click)="submitRating()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+ <div #mapContainer id="map" style="height: 150px;"></div>
+</div>
+-->
+
+
+
+<!--<div class="customer-dashboard">
+  <div class="header">
+    <h1>Welcome, {{ customerName }}!</h1>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <div class="main-content">
+    <div class="request-ride">
+      <h2>Request a Ride</h2>
+      <div class="ride-details">
+        <label>Destination:</label>
+        <input type="text" [(ngModel)]="destination" (keydown.enter)="searchDestination()">
+        <button (click)="searchDestination()">Search</button>
+      </div>
+      <button (click)="requestRide()">Request Truck</button>
+    </div>
+
+    <div class="current-ride" *ngIf="currentRide">
+      <h2>Current Ride</h2>
+      <div class="ride-details">
+        <p>Driver: {{ currentRide?.driver }}</p>
+        <p>Car: {{ currentRide?.carModel }}</p>
+        <p>License Plate: {{ currentRide?.licensePlate }}</p>
+      </div>
+      <button (click)="cancelRide()">Cancel Ride</button>
+    </div>
+
+    <div *ngIf="rideAccepted">
+      <p>Driver: {{ currentRide?.driver }}</p>
+    </div>
+
+    <div *ngIf="rideRejected">
+      <p>Driver: No drivers available</p>
+    </div>
+  </div>
+
+  <div #mapContainer id="map" style="height: 350px;"></div>
+</div>
+-->
+
+<!--
+<div class="customer-dashboard">
+  <div class="header">
+    <h1>Welcome, {{ customerName }}!</h1>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <div class="main-content">
+    <div class="request-ride">
+      <h2>Request a Ride</h2>
+      <div class="ride-details">
+        <label>Destination:</label>
+        <input type="text" [(ngModel)]="destination" (keydown.enter)="searchDestination()">
+        <button (click)="searchDestination()">Search</button>
+      </div>
+      <button (click)="requestRide()">Request Truck</button>
+    </div>
+
+    <div class="current-ride" *ngIf="currentRide">
+      <h2>Current Ride</h2>
+      <div class="ride-details">
+        <p>Driver: {{ currentRide.driverName }}</p>
+        <p>Car: {{ currentRide.carModel }}</p>
+        <p>License Plate: {{ currentRide.licensePlate }}</p>
+      </div>
+      <button (click)="cancelRide()">Cancel Ride</button>
+    </div>
+  </div>
+
+  <div #mapContainer id="map" style=  "height: 350px;"></div>
+</div>
+
+-->

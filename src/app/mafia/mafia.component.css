@@ -1,0 +1,33 @@
+header{
+    background-color: black;
+}
+image{
+    width: 100px;
+    height: 0px;
+}
+#Huncho{
+margin-top: 35px;
+}
+#Logo{
+    margin-top: 35px;
+}
+h1{
+    margin-bottom: 35px;
+    color: blanchedalmond;
+}
+
+.Interior{
+    visibility: visible !important;
+}
+h2{
+    color: antiquewhite;
+}
+h2:hover{
+    background-color: grey;
+}
+h3:hover{
+    background-color: red;
+}
+h4{
+    text-transform: capitalize;
+}

@@ -1,0 +1,6 @@
+<div *ngIf="!isLoggedIn">
+  <!-- Your login form here -->
+  <input type="text" [(ngModel)]="username" placeholder="Username">
+  <input type="password" [(ngModel)]="password" placeholder="Password">
+  <div id="button1"><button (click)="onContinue()">Continue</button></div>
+</div>

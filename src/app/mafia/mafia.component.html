@@ -1,0 +1,59 @@
+<!--ADDING A STUDENT NAME TO A STUDENT ROSTER
+<header>
+    <h1>Bugatti Roster
+        <small>
+            <ol>
+               <li>Bugatti Veryon</li>
+               <li>Bugatti Divo</li>
+               <li>Bugatti Type 35</li>
+               <li>Bugatti Chiron</li>
+               <li>Bugatti Royale</li>
+            </ol>  
+           </small>
+    </h1>
+    <div>
+    <h3 appMydirective>Enter Name</h3>
+    </div>
+    
+    <div #Logo>
+        <input type="text" placeholder="name" [(ngModel)]="currentName">
+    <button id="baller" (click)="add()">Submit baller Name</button>
+    <li *ngFor="let names of bugattiRoster">{{names}}</li>
+  
+    </div>
+    
+        <h2> VEYRON INFORMATION</h2>
+        <button id="Huncho" (click)=toggleDisplay()>Toggle Display</button>
+        <p *ngIf="state === true">The CHIRON is the fastest, most powerful, and exclusive production super sports car in BUGATTI's history. Its sophisticated design, innovative technology, and iconic, performance-oriented form make it a unique masterpiece of art, form and technique, that pushes boundaries beyond imagination.</p>
+        <p *ngIf="state === false">The Bugatti Veyron EB 16.4 is a mid-engine sports car, designed and developed in Germany by the Volkswagen Group and Bugatti and manufactured in Molsheim, France, by French automobile manufacturer Bugatti. It was named after the racing driver Pierre Veyron.
+
+            The original version has a top speed of 407 km/h (253 mph).[6][7] It was named the 2000s Car of the Decade by the BBC television programme Top Gear.</p>
+
+        <div #veyron>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Veyron_SS.jpg/420px-Veyron_SS.jpg" alt="Wikipidea">
+            </div>
+            <button>Change</button>
+     
+    
+            <div id="hunchos">
+                <h2>ATTRIBUTES:</h2>
+                <ol>
+                <li>{{myobject.color}}</li>
+                <li>{{myobject.type}}</li>
+                <li>{{myobject.cost}}</li>
+                <li>{{myobject.material}} </li>
+                </ol>
+                
+            </div>
+            <div class="interior">
+                NsService
+                <h4>{{message}}</h4>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/13-06-2008_-_SC08_Bugatti_EB_16.4_Veyron_Interior.jpg/330px-13-06-2008_-_SC08_Bugatti_EB_16.4_Veyron_Interior.jpg" alt="interior">
+            </div>
+            
+        </header>
+        <body>
+            <script src="js/script.js" charset="utf-8"></script>
+        </body>
+    -->
