@@ -25,8 +25,6 @@ export class LoginComponent {
     }
   }
 }
-
-
 /*
 import { Component, EventEmitter, Output } from '@angular/core';
 
