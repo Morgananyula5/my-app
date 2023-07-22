@@ -1,6 +1,9 @@
 <div *ngIf="!isLoggedIn">
   <!-- Your login form here -->
-  <input type="text" [(ngModel)]="username" placeholder="Username">
-  <input type="password" [(ngModel)]="password" placeholder="Password">
-  <div id="button1"><button (click)="onContinue()">Continue</button></div>
+  <h2 class="font-bold text-3xl">Welcome back</h2>
+  <label for="username">Username</label>
+  <input type="text" [(ngModel)]="username" placeholder="Username"  class="block p-4 border rounded-full mb-4 outline-none focus:border-black w-full">
+  <label for="">Passowrd</label>
+  <input type="password" [(ngModel)]="password" placeholder="Password"  class="block p-4 border rounded-full mb-4 outline-none focus:border-black w-full">
+  <div id="button1"><button (click)="onContinue()" class="btn w-3/12 p-4 bg-[#318464] border border-[#318464] rounded-full text-white hover:bg-white hover:text-[#318464] hover:border-[#318464] outline-none">Continue</button></div>
 </div>

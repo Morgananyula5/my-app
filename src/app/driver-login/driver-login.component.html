@@ -1,14 +1,14 @@
 <!-- driver-login.component.html -->
-<h2>Driver Login</h2>
+<h2 class="font-bold text-3xl">All aboard! Drivers Login</h2>
 
 <form (ngSubmit)="onSubmit()">
   <div>
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" [(ngModel)]="email" required>
+    <input type="email" id="email" name="email" [(ngModel)]="email" required class="block p-4 border rounded-full mb-4 outline-none focus:border-black w-full">
   </div>
   <div>
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required class="block p-4 border rounded-full mb-4 outline-none focus:border-black w-full">
   </div>
-  <button type="submit">Login</button>
+  <button type="submit" class="btn w-3/12 p-4 bg-[#318464] border border-[#318464] rounded-full text-white hover:bg-white hover:text-[#318464] hover:border-[#318464] outline-none">Login</button>
 </form>

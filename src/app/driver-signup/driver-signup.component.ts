@@ -9,11 +9,14 @@ export class DriverSignupComponent {
   name = '';
   email = '';
   password = '';
+  phoneNumber='';
+  truckType='';
+  numberPlate='';
 
   @Output() continue = new EventEmitter<void>();
 
   onSubmit() {
-    if (this.name && this.email && this.password) { // Check if all fields are filled
+    if (this.name && this.email && this.password&& this.phoneNumber&&this.numberPlate&&this.truckType) { // Check if all fields are filled
       // Perform driver signup
       // ...
       // If signup is successful, emit the 'continue' event

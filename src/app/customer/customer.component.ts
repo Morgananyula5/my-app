@@ -206,10 +206,36 @@ export class CustomerComponent implements OnInit {
       alert('Ride canceled');
     });
   }
+  rateDriver(rating: number) {
+    // Implement your rating logic here
+    this.rating = rating;
+  }
+
+  highlightStars(starNumber: number) {
+    // Highlight stars on hover
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+      if (index < starNumber) {
+        star.classList.add('filled');
+      } else {
+        star.classList.remove('filled');
+      }
+    });
+  }
+
+  resetStars() {
+    // Reset star colors when the mouse leaves the container
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+      if (index >= this.rating) {
+        star.classList.remove('filled');
+      }
+    });
+  }
 
   submitRating() {
     this.socket.emit('customerRatingUpdate', this.rating);
-    alert('Rating submitted');
+    alert('Rating submitted'+this.rating);
   }
 }
 

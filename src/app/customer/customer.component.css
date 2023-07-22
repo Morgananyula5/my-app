@@ -1,4 +1,24 @@
-@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
 #destination{
     color: green;
 }
+/* Default styles for the stars */
+.stars {
+    display: inline-block;
+  }
+  
+  .star {
+    cursor: pointer;
+    color: gray;
+  }
+  
+  /* Filled star color */
+  .star.filled {
+    color: gold;
+  }
+  
+  /* Apply green color to stars on hover */
+  .star:hover {
+    color: gold;
+  }
+  

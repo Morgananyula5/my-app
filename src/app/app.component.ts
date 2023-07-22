@@ -12,7 +12,7 @@ export class AppComponent {
   showDriverSignupComponent = false;
   isLoggedIn = false;
   isDriver = false;
-
+  
   onLoginContinue() {
     this.showLoginComponent = false;
     this.isLoggedIn = true;
