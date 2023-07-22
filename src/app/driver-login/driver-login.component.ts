@@ -12,10 +12,8 @@ export class DriverLoginComponent {
   @Output() continue = new EventEmitter<void>();
 
   onSubmit() {
-    if (this.email && this.password) { // Check if email and password are filled
-      // Perform driver login authentication
-      // ...
-      // If login is successful, emit the 'continue' event
+    if (this.email && this.password) { 
+    
       this.continue.emit();
     } else {
       alert('Please fill in all the fields.');

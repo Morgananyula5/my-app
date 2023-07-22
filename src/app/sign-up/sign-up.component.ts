@@ -13,7 +13,7 @@ export class SignupComponent {
   @Output() continue: EventEmitter<any> = new EventEmitter<any>();
 
   continueSignup() {
-    if (this.fullName && this.email && this.password) { // Check if all fields are filled
+    if (this.fullName && this.email && this.password) { 
       const userDetails = {
         fullName: this.fullName,
         email: this.email,

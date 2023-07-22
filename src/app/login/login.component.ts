@@ -12,13 +12,9 @@ export class LoginComponent {
   isLoggedIn: boolean = false;
 
   onContinue() {
-    if (this.username && this.password) { // Check if username and password are filled
-      // Add your login logic here
-
-      // Simulating successful login
+    if (this.username && this.password) { 
       this.isLoggedIn = true;
 
-      // Emit the continue event
       this.continue.emit();
     } else {
       alert('Please fill in all the fields.');

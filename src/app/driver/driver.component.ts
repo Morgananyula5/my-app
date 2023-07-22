@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DriverService } from '../services/driver.service';
@@ -242,7 +241,10 @@ export class DriverComponent implements OnInit {
     this.socket = io(socketUrl) as Socket; // Use the io object to establish the socket connection
 
     this.socket.on('ride_request', (rideDetails: any) => {
-      this.activeTrip = rideDetails;
+      // Display a notification to the driver when a new ride request is received
+      // You can use a notification library or display it as needed
+      console.log('New ride request received:', rideDetails);
+      alert(`New ride request from ${rideDetails.customer} for ${rideDetails.destination}`);
     });
 
     this.socket.on('driverAvailabilityUpdated', (isAvailable: boolean) => {
