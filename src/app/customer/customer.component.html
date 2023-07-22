@@ -1,48 +1,58 @@
 <div class="customer-dashboard">
-  <div class="header">
-    <h1>Welcome, {{ customerName }}!</h1>
-    <button (click)="logout()">Logout</button>
+  <div class="header flex items-center justify-between py-8 px-2 gap-4 shadow-sm">
+    <h1 class="fonr-extrabold text-3xl">Welcome, {{ customerName }}!</h1>
+    <button (click)="logout()" class="text-[#318464] hover:scale-90 mx-8">Logout</button>
   </div>
 
   <div class="main-content">
     <div class="request-ride">
-      <h2>Request a Ride</h2>
-      <div class="ride-details">
+      <div class="ride-details p-4">
         <div id="destination">
-        <label>Destination:</label>
-      </div>
-        <input type="text" [(ngModel)]="destination" (keydown.enter)="searchDestination()">
-        <button (click)="searchDestination()">Search</button>
+          <label class="text-3xl">Where are you going today:</label>
+        </div>
+        <input type="text" [(ngModel)]="destination" (keydown.enter)="searchDestination()" class="block p-4 border rounded-full mb-4 outline-none focus:border-black ">
+        <button (click)="searchDestination()" class="text-[#318464] hover:scale-90 my-4 block">Search</button>
+        <button (click)="requestRide()" class="btn mb-8 p-4 bg-[#318464] block border border-[#318464] rounded-full text-white hover:bg-white hover:text-[#318464] hover:border-[#318464] outline-none">Request Truck</button>
       </div>
       <div></div>
-      <button (click)="requestRide()">Request Truck</button>
+      
     </div>
-
-    <div class="current-ride" *ngIf="currentRide">
-      <h2>Current Ride</h2>
+    <div #mapContainer id="map" style="height: 400px;"></div>
+    <div class="current-ride p-4" >
+      <h2  class="text-3xl font-bold">Current Ride</h2>
       <div class="ride-details">
-        <p>Driver: {{ currentRide?.driver }}</p>
-        <p>Truck: {{ currentRide?.truck }}</p>
-        <p>License Plate: {{ currentRide?.licensePlate }}</p>
-        <p>Phone Number: 0789784657</p>
+        <p class="my-4">Driver: {{ currentRide?.driver }}</p>
+        <p class="my-4">Truck: {{ currentRide?.truck }}</p>
+        <p class="my-4">License Plate: {{ currentRide?.licensePlate }}</p>
+        <p class="my-4">Phone Number: <a href="tel:+{{currentRide?.phoneNumber}}">{{currentRide?.phoneNumber}}</a></p>
+        <button (click)="cancelRide()" class="btn mb-8 p-4 bg-[#318464] block border border-[#318464] rounded-full text-white hover:bg-white hover:text-[#318464] hover:border-[#318464] outline-none">Cancel Ride</button>
       </div>
-      <button (click)="cancelRide()">Cancel Ride</button>
+     
     </div>
 
-    <div *ngIf="rideAccepted">
-      <p>Driver: {{ currentRide?.driver }}</p>
-    </div>
-    <div class="rating" *ngIf="currentRide">
+    <div class="rating p-4" *ngIf="rideAccepted">
       <h2>Rate Your Driver</h2>
       <div class="rating-details">
-        <label for="rating">Rating:</label>
-        <input type="number" id="rating" [(ngModel)]="rating" min="1" max="5">
-        <button (click)="submitRating()">Submit</button>
+        <div class="stars text-5xl">
+          <span class="star" (click)="rateDriver(1)" [ngClass]="{'filled': rating >= 1, 'highlight': rating >= 1}" (mouseenter)="highlightStars(1)" (mouseleave)="resetStars()"><i class="fas fa-star"></i></span>
+          <span class="star" (click)="rateDriver(2)" [ngClass]="{'filled': rating >= 2, 'highlight': rating >= 2}" (mouseenter)="highlightStars(2)" (mouseleave)="resetStars()"><i class="fas fa-star"></i></span>
+          <span class="star" (click)="rateDriver(3)" [ngClass]="{'filled': rating >= 3, 'highlight': rating >= 3}" (mouseenter)="highlightStars(3)" (mouseleave)="resetStars()"><i class="fas fa-star"></i></span>
+          <span class="star" (click)="rateDriver(4)" [ngClass]="{'filled': rating >= 4, 'highlight': rating >= 4}" (mouseenter)="highlightStars(4)" (mouseleave)="resetStars()"><i class="fas fa-star"></i></span>
+          <span class="star" (click)="rateDriver(5)" [ngClass]="{'filled': rating >= 5, 'highlight': rating >= 5}" (mouseenter)="highlightStars(5)" (mouseleave)="resetStars()"><i class="fas fa-star"></i></span>
+        </div>
+        <br>
+        <button (click)="submitRating()" class="btn my-8 p-4 bg-[#318464] block border border-[#318464] rounded-full text-white hover:bg-white hover:text-[#318464] hover:border-[#318464] outline-none">Submit</button>
       </div>
     </div>
+    
+    
   </div>
 
+<<<<<<< HEAD
   <div #mapContainer id="map" style="height: 250px;"></div>
+=======
+  
+>>>>>>> 1583d0c1cde342d1f7c1dcf052115fa4ac20c6da
 </div>
 
 <!--<div class="customer-dashboard">

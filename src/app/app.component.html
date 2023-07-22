@@ -1,25 +1,30 @@
 <div class="container" *ngIf="!isLoggedIn">
     <div class="welcome">
-      <h1>Welcome to My App!</h1>
+      <h1 class="font-extrabold text-5xl">Welcome to Clean up!</h1>
     </div>
   
-    <div class="buttons">
-      <button (click)="showLoginComponent = true">Login</button><br>
-      <button (click)="showSignupComponent = true">Sign Up</button><br>
-      <button (click)="showDriverLoginComponent = true">Driver Login</button><br>
-      <button (click)="showDriverSignupComponent = true">Driver Sign Up</button><br>
+    <div class="button-container flex gap-4 my-8">
+      <button id="customerLoginBtn" (click)="showLoginComponent = true; showSignupComponent = false; showDriverLoginComponent = false; showDriverSignupComponent = false;" class="clicked-btn btn p-4 border border-[#318464] rounded-full text-[#318464] hover:bg-[#318464] hover:text-white hover:border-[#318464] outline-none">Customer login</button><br>
+      <button id="customerRegisterBtn" (click)="showLoginComponent = false; showSignupComponent = true; showDriverLoginComponent = false; showDriverSignupComponent = false;" class="btn p-4 border border-[#318464] rounded-full text-[#318464] hover:bg-[#318464] hover:text-white hover:border-[#318464] outline-none">Customer Register</button><br>
+      <button id="driverLoginBtn" (click)="showLoginComponent = false; showSignupComponent = false; showDriverLoginComponent = true; showDriverSignupComponent = false;" class="btn p-4 border border-[#318464] rounded-full text-[#318464] hover:bg-[#318464] hover:text-white hover:border-[#318464] outline-none">Driver Login</button><br>
+      <button id="driverSignupBtn" (click)="showLoginComponent = false; showSignupComponent = false; showDriverLoginComponent = false; showDriverSignupComponent = true;" class="btn p-4 border border-[#318464] rounded-full text-[#318464] hover:bg-[#318464] hover:text-white hover:border-[#318464] outline-none">Driver Sign Up</button><br>
     </div>
-  
-    <app-login *ngIf="showLoginComponent && !isLoggedIn" (continue)="onLoginContinue()"></app-login>
-    <app-sign-up *ngIf="showSignupComponent && !isLoggedIn" (continue)="onSignupContinue()"></app-sign-up>
-    <app-driver-login *ngIf="showDriverLoginComponent && !isLoggedIn" (continue)="onDriverLoginContinue()"></app-driver-login>
-    <app-driver-signup *ngIf="showDriverSignupComponent && !isLoggedIn" (continue)="onDriverSignupContinue()"></app-driver-signup>
+    <div *ngIf="showLoginComponent || showSignupComponent ||showDriverLoginComponent || showDriverSignupComponent"
+     class="flex min-h-[75vh] min-w-screen grid grid-cols-12 shadow-lg ">
+      <div  class="col-span-4 bg-[#318464] bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1610141160723-d2d346e73766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')] p-4"></div>
+      <div class="col-span-8 grid items-center px-4 ">
+        <app-login *ngIf="showLoginComponent && !isLoggedIn" (continue)="onLoginContinue()"></app-login>
+        <app-sign-up *ngIf="showSignupComponent && !isLoggedIn" (continue)="onSignupContinue()"></app-sign-up>
+        <app-driver-login *ngIf="showDriverLoginComponent && !isLoggedIn" (continue)="onDriverLoginContinue()"></app-driver-login>
+        <app-driver-signup *ngIf="showDriverSignupComponent && !isLoggedIn" (continue)="onDriverSignupContinue()"></app-driver-signup>
+      </div>
+    </div>
+    
   </div>
   
   <app-customer *ngIf="isLoggedIn && !isDriver" (logout)="onLogout()"></app-customer>
   <app-driver *ngIf="isLoggedIn && isDriver" (logout)="onLogout()"></app-driver>
-  
-  
+
 <router-outlet></router-outlet>
 
 

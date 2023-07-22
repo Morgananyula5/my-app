@@ -9,6 +9,9 @@ export class DriverSignupComponent {
   name = '';
   email = '';
   password = '';
+  phoneNumber='';
+  truckType='';
+  numberPlate='';
 
   @Output() continue = new EventEmitter<void>();
 

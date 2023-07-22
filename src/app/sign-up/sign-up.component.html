@@ -1,17 +1,17 @@
-<h2>Sign Up</h2>
+<h2 class="font-bold text-3xl">Join us in our amazing journey</h2>
 <div>
   <label>Full Name:</label>
-  <input type="text" [(ngModel)]="fullName" placeholder="Enter your full name">
+  <input type="text" [(ngModel)]="fullName" placeholder="Enter your full name" class="block p-4 border rounded-full mb-4 outline-none focus:border-black w-full">
 </div>
 <div>
   <label>Email:</label>
-  <input type="email" [(ngModel)]="email" placeholder="Enter your email">
+  <input type="email" [(ngModel)]="email" placeholder="Enter your email" class="block p-4 border rounded-full mb-4 outline-none focus:border-black w-full">
 </div>
 <div>
   <label>Password:</label>
-  <input type="password" [(ngModel)]="password" placeholder="Enter your password">
+  <input type="password" [(ngModel)]="password" placeholder="Enter your password" class="block p-4 border rounded-full mb-4 outline-none focus:border-black w-full">
 </div>
-<button (click)="continueSignup()">Continue</button>
+<button (click)="continueSignup()" class="btn w-3/12 p-4 bg-[#318464] border border-[#318464] rounded-full text-white hover:bg-white hover:text-[#318464] hover:border-[#318464] outline-none">Continue</button>
 
 <!--<h2>Sign Up</h2>
 <div>

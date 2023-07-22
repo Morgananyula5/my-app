@@ -1,40 +1,48 @@
+<<<<<<< HEAD
 <div class="driver-dashboard">
   <div class="header">
     <h1>Welcome, {{ driverName }}!</h1>
     <button (click)="logout()">Logout</button>
+=======
+
+<div class="driver-dashboard p-4">
+  <div class="header flex items-center justify-between py-8 px-2 gap-4 shadow-sm">
+    <h1 class="fonr-extrabold text-3xl">Welcome, !</h1>
+    <button (click)="logout()" class="text-[#318464] hover:scale-90 mx-8">Logout</button>
+>>>>>>> 1583d0c1cde342d1f7c1dcf052115fa4ac20c6da
   </div>
-  <div>
-    <input id="search-input" type="text" placeholder="Enter destination">
-    <button id="search-button">Search</button>
+  <div class="my-8">
+    <input id="search-input" type="text" placeholder="Enter destination" class="block p-4 border rounded-full mb-4 outline-none focus:border-black ">
+    <button id="search-button"  class="text-[#318464] hover:scale-90 my-4 block">Search</button>
   </div>
  
   <div id="map" style="width: 80%; height: 250px;"></div>
   <div class="main-content">
     <div class="availability">
-      <h2>Availability</h2>
-      <button (click)="toggleAvailability()">{{ isAvailable ? 'Go Offline' : 'Go Online' }}</button>
+      <h2 class="text-4xl">Change Availability</h2>
+      <button class="text-white p-4 rounded my-8 transition-all hover:scale-90" [ngClass]="{'online': isAvailable, 'offline': !isAvailable}" (click)="toggleAvailability()">{{ isAvailable ? 'Go Offline' : 'Go Online' }}</button>
     </div>
 
     <div class="rating">
-      <h2>Rating</h2>
-      <p>Your Rating: {{ driverRating }}</p>
+      <p class="flex items-center">Your Rating: <span class="text-4xl">{{ driverRating }}/</span>5.0<i class="fas fa-star  text-4xl text-amber-400 "></i></p>
   <!--Display and update the rating as needed -->
     </div>
   </div>
 
-  <div class="ride-request" *ngIf="activeTrip">
-    <h2>Ride Request</h2>
+  
+  <div class="ride-request" *ngIf="activeTrip" >
+    <h2 class="text-3xl font-extrabold mb-3">You have a ride Request</h2>
     <div class="request-details">
       <p>Customer: {{ activeTrip.customer }}</p>
       <p>Destination: {{ activeTrip.destination }}</p>
-     <p>Phone Number: 0720872002</p>
+      <p>Phone Number: 0720872002</p>
     </div>
-    <button (click)="acceptRide()">Accept</button>
-    <button (click)="rejectRide()">Reject</button>
+    <button (click)="acceptRide()" class="bg-[#318464] text-white mx-8 my-4 transition-all hover:scale-90 p-4">Accept</button>
+    <button (click)="rejectRide()" class="bg-red-600 text-white mx-8 my-4 transition-all hover:scale-90 p-4">Reject</button>
   </div>
 
-  <div class="rating" *ngIf="activeTrip && activeTrip.completed">
-    <h2>Customer Rating</h2>
+  <div class="rating"  *ngIf="activeTrip && activeTrip.completed " class="bg-[#318464] text-white rounded p-4 my-8">
+    <h2 class="text-4xl">Customer Rating for trip</h2>
     <div class="rating-details">
       <p>Customer: {{ activeTrip.customer }}</p>
       <p>Rating: {{ activeTrip.rating }}</p>
